@@ -6,7 +6,7 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 07:36:45 by mhurd             #+#    #+#             */
-/*   Updated: 2016/10/14 07:44:39 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/10/18 11:59:45 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int			fract_mb(t_data *d, double x, double y)
 {
-	double zr;
-	double zi;
-	double zrsqr;
-	double zisqr;
-	int iters;
+	double	zr;
+	double	zi;
+	double	zrsqr;
+	double	zisqr;
+	int		iters;
 
 	x = ((4 * x / WINDOW_SIZE_X - 2) / d->scale) +
 		((d->xtrans / WINDOW_SIZE_X));
@@ -37,5 +37,5 @@ int			fract_mb(t_data *d, double x, double y)
 		zrsqr = zr * zr;
 		zisqr = zi * zi;
 	}
-	return iters;
+	return (iters);
 }

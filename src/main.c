@@ -6,7 +6,7 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 15:35:03 by mhurd             #+#    #+#             */
-/*   Updated: 2016/10/14 09:42:23 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/10/18 12:01:19 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,23 @@
 
 void	list_fractals(void)
 {
-	ft_putstr("\
-____________________________________________\n\
-Valid fractals:\n\
+	ft_putendl("Valid fractals:\n\
 	J: Julia\n\
 	M: Mandelbrot\n\
 	B: Burning Ship\n\
-	T: Trigonometric Julia\n\
-____________________________________________\n\
-");
+	T: Trigonometric Julia");
 	exit(0);
 }
 
 void	display_controls(void)
 {
-	ft_putstr("\
-____________________________________________\n\
-CONTROLS:\n\
- Zoom:\n\
-    IN: Mouse: LClick\n\
-      Will zoom at mouse coordinates.\n\
-    OUT: Mouse: RClick\n\
-____________________________________________\n\
-");
+	ft_putendl("CONTROLS:\n\
+Zoom:\n\
+	IN: Mouse: LClick\n\
+		Scroll: Up\n\
+	Will zoom at mouse coordinates.\n\
+	OUT: Mouse: RClick\n\
+		Scroll: Down");
 }
 
 void	set_fract(t_data *d, char *s)
@@ -51,10 +45,9 @@ void	set_fract(t_data *d, char *s)
 		d->fract = (fract_bs);
 	else if (ft_strequ(s, "T"))
 		d->fract = (fract_trig);
-
 }
 
-int	main(int ac, char **av)
+int		main(int ac, char **av)
 {
 	t_data	*data;
 

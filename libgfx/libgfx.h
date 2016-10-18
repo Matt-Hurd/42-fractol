@@ -6,7 +6,7 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 16:42:11 by mhurd             #+#    #+#             */
-/*   Updated: 2016/10/14 09:41:40 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/10/18 12:02:41 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ typedef struct	s_vertex
 typedef struct	s_plot
 {
 	t_vertex	***points;
-	int		width;
-	int		height;
-	float	z_min;
-	float	z_max;
+	int			width;
+	int			height;
+	float		z_min;
+	float		z_max;
 }				t_plot;
 
 typedef struct	s_data
@@ -71,7 +71,7 @@ typedef struct	s_data
 	float	cb;
 	char	paused;
 	t_plot	*plot;
-	int (*fract)(struct s_data *, double, double);
+	int		(*fract)(struct s_data *, double, double);
 }				t_data;
 
 void			ft_mat_copy(float source[4][4], float dest[4][4]);
@@ -86,5 +86,5 @@ void			ft_make_identity_matrix(float matrix[4][4]);
 void			ft_3d_drawline(t_data *d, t_3d p1, t_3d p2);
 t_3d			*ft_make_3d(int x, int y, int z);
 t_vertex		*ft_make_vertex(int x, int y, int z);
-void 			color_pixel(t_data *d, int x, int y, int iterations);
+void			color_pixel(t_data *d, int x, int y, int iterations);
 #endif

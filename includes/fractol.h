@@ -6,7 +6,7 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 16:06:16 by mhurd             #+#    #+#             */
-/*   Updated: 2016/10/14 09:21:55 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/10/18 11:58:56 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,31 +31,31 @@
 # define KEY_RIGHT			0x7C
 # define KEY_DOWN			0x7D
 # define KEY_UP				0x7E
-
 # define KEY_MOUSE_CLIC_L	0x01
 # define KEY_MOUSE_CLIC_R	0x02
 # define KEY_MOUSE_UP		0x05
 # define KEY_MOUSE_DOWN		0x04
+
 typedef struct	s_complex
 {
-    double r;
-    double i;
+	double r;
+	double i;
 }				t_complex;
 
-t_plot		*parse_file(char *filename);
-void		draw_everything(t_data *d);
-int			key_hook(int keycode, t_data *d);
-void		draw_reload(t_data *d);
-void		ft_exit(void);
-void		ft_malloc_error(void);
-void		ft_map_error(void);
-void		ft_arg_error(void);
-void		ft_error(void);
-int			fract_julia(t_data *d, double x, double y);
-int			mouse_hook(int button, int x,int y, t_data *d);
-void		draw_fract(t_data *d);
-int			mouse_move(int x, int y, t_data *d);
-int			fract_mb(t_data *d, double x, double y);
-int			fract_bs(t_data *d, double x, double y);
-int			fract_trig(t_data *d, double x, double y);
+t_plot			*parse_file(char *filename);
+void			draw_everything(t_data *d);
+int				key_hook(int keycode, t_data *d);
+void			draw_reload(t_data *d);
+void			ft_exit(void);
+void			ft_malloc_error(void);
+void			ft_map_error(void);
+void			ft_arg_error(void);
+void			ft_error(void);
+int				fract_julia(t_data *d, double x, double y);
+int				mouse_hook(int button, int x, int y, t_data *d);
+void			draw_fract(t_data *d);
+int				mouse_move(int x, int y, t_data *d);
+int				fract_mb(t_data *d, double x, double y);
+int				fract_bs(t_data *d, double x, double y);
+int				fract_trig(t_data *d, double x, double y);
 #endif

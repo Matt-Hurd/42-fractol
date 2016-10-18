@@ -6,13 +6,13 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/09 19:49:17 by mhurd             #+#    #+#             */
-/*   Updated: 2016/10/14 05:11:53 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/10/18 12:02:50 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libgfx.h"
 
-t_3d	*ft_make_3d(int x, int y, int z)
+t_3d		*ft_make_3d(int x, int y, int z)
 {
 	t_3d *ret;
 

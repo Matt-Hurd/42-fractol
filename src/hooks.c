@@ -6,7 +6,7 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 01:12:45 by mhurd             #+#    #+#             */
-/*   Updated: 2016/10/14 09:18:51 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/10/18 12:00:03 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static	void	mouse_hook_scale(int keycode, int x, int y, t_data *d)
 		d->scale = fabs(d->scale - 0.5);
 }
 
-int			mouse_move(int x, int y, t_data *d)
+int				mouse_move(int x, int y, t_data *d)
 {
 	if (!d->paused)
 	{
@@ -39,7 +39,7 @@ int			mouse_move(int x, int y, t_data *d)
 	return (0);
 }
 
-int				mouse_hook(int button, int x,int y, t_data *d)
+int				mouse_hook(int button, int x, int y, t_data *d)
 {
 	mouse_hook_scale(button, x, y, d);
 	draw_reload(d);
