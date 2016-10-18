@@ -6,7 +6,7 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 04:47:51 by mhurd             #+#    #+#             */
-/*   Updated: 2016/10/18 12:03:23 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/10/18 12:12:53 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ static int	get_color(t_data *d, double iterations)
 	unsigned int	green;
 	unsigned int	blue;
 
-	frequency = M_PI * 2.0;
-	red = (sin(frequency * iterations / d->max) + 1) * 127;
-	green = (cos(frequency * iterations / d->max) + 1) * 127;
-	blue = (-cos(frequency * iterations / d->max) + 1) * 127;
+	(void)d;
+	frequency = M_PI / 40;
+	red = (sin(frequency * iterations) + 1) * 127;
+	green = (cos(frequency * iterations) + 1) * 127;
+	blue = (-cos(frequency * iterations) + 1) * 127;
 	return (red << 16 | ((green << 8) & 0xFF00) | (blue & 0xFF));
 }
 
