@@ -6,7 +6,7 @@
 #    By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/28 19:34:56 by mhurd             #+#    #+#              #
-#    Updated: 2016/10/14 09:21:38 by mhurd            ###   ########.fr        #
+#    Updated: 2016/10/30 16:55:24 by mhurd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,11 +42,19 @@ LIBGFXLINK	= -L./libgfx -lgfx
 SRCDIR	= ./src/
 INCDIR	= ./includes/
 OBJDIR	= ./obj/
+OBJDIR2	= ./obj/user_input/
 
 all: obj libft mlx libgfx $(NAME)
 
+gfx:
+	rm -rf $(NAME)
+	rm -rf $(OBJDIR)
+	make -C ./libgfx fclean
+	make
+
 obj:
 	mkdir -p $(OBJDIR)
+	mkdir -p $(OBJDIR2)
 
 $(OBJDIR)%.o:$(SRCDIR)%.c
 	$(CC) $(CFLAGS) $(LIBINC) $(MLXINC) $(LIBGFXINC) -I $(INCDIR) -o $@ -c $<

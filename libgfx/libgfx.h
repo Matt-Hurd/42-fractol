@@ -6,7 +6,7 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 16:42:11 by mhurd             #+#    #+#             */
-/*   Updated: 2016/10/18 12:02:41 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/10/30 16:54:00 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # define ABS(x) ((x > 0) ? x : x * -1)
 # define COLOR2 0x16A085
 # define COLOR1 0xF4D03F
-# define WINDOW_SIZE_X 700
-# define WINDOW_SIZE_Y 700
+# define WINDOW_SIZE_X 1000
+# define WINDOW_SIZE_Y 1000
 
 typedef struct	s_2d
 {
