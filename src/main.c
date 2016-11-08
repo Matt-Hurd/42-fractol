@@ -6,7 +6,7 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 15:35:03 by mhurd             #+#    #+#             */
-/*   Updated: 2016/10/18 12:01:19 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/11/08 13:29:18 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@ void	list_fractals(void)
 	J: Julia\n\
 	M: Mandelbrot\n\
 	B: Burning Ship\n\
-	T: Trigonometric Julia");
+	Q: Mandelbrot Z^4\n\
+	W: Wall\n\
+	C: Cos Mandelbrot\n\
+	S: Sin Mandelbrot\n\
+	P: Phoenix\n\
+	BJ: Burning Julia");
 	exit(0);
 }
 
@@ -30,9 +35,18 @@ void	display_controls(void)
 Zoom:\n\
 	IN: Mouse: LClick\n\
 		Scroll: Up\n\
-	Will zoom at mouse coordinates.\n\
+		Will zoom at mouse coordinates.\n\
 	OUT: Mouse: RClick\n\
-		Scroll: Down");
+		Scroll: Down\n\
+Translate:\n\
+	Arrow Keys\n\
+Modify Julia:\n\
+	Mouse coordinates\n\
+	Spacebar to lock\n\
+Increase Max Iterations:\n\
+	Numpad +/-\n\
+Change Color Spectrum:\n\
+	Numpad 1/2");
 }
 
 void	set_fract(t_data *d, char *s)
@@ -43,8 +57,18 @@ void	set_fract(t_data *d, char *s)
 		d->fract = (fract_mb);
 	else if (ft_strequ(s, "B"))
 		d->fract = (fract_bs);
-	else if (ft_strequ(s, "T"))
-		d->fract = (fract_trig);
+	else if (ft_strequ(s, "Q"))
+		d->fract = (fract_quad);
+	else if (ft_strequ(s, "W"))
+		d->fract = (fract_wall);
+	else if (ft_strequ(s, "C"))
+		d->fract = (fract_cos);
+	else if (ft_strequ(s, "S"))
+		d->fract = (fract_sin);
+	else if (ft_strequ(s, "P"))
+		d->fract = (fract_phoenix);
+	else if (ft_strequ(s, "BJ"))
+		d->fract = (fract_bsjulia);
 }
 
 int		main(int ac, char **av)

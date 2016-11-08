@@ -6,7 +6,7 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 01:12:45 by mhurd             #+#    #+#             */
-/*   Updated: 2016/10/18 12:00:03 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/11/08 13:38:19 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static	void	mouse_hook_scale(int keycode, int x, int y, t_data *d)
 		d->ytrans -= y / d->scale / 2.51;
 	}
 	else if (keycode == KEY_MOUSE_CLIC_R || keycode == KEY_MOUSE_DOWN)
-		d->scale = fabs(d->scale - 0.5);
+		d->scale /= (d->scale > 0.2 ? 1.1 : 1);
 }
 
 int				mouse_move(int x, int y, t_data *d)
@@ -63,6 +63,8 @@ int				key_hook(int keycode, t_data *d)
 		d->xtrans -= ((keycode == KEY_LEFT) ? 100 : -100) / d->scale;
 	else if (keycode == KEY_UP || keycode == KEY_DOWN)
 		d->ytrans -= ((keycode == KEY_DOWN) ? 100 : -100) / d->scale;
+	else if (keycode == NUM_2 || keycode == NUM_1)
+		d->color_offset -= ((keycode == NUM_2) ? 0.1 : -0.1);
 	draw_reload(d);
 	return (0);
 }

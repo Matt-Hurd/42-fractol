@@ -6,7 +6,7 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 16:42:11 by mhurd             #+#    #+#             */
-/*   Updated: 2016/10/30 16:54:00 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/11/08 13:51:40 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "libft.h"
 # include <stdlib.h>
 # include <math.h>
+# include <pthread.h>
+
 # define ABS(x) ((x > 0) ? x : x * -1)
 # define COLOR2 0x16A085
 # define COLOR1 0xF4D03F
@@ -24,8 +26,8 @@
 
 typedef struct	s_2d
 {
-	short	x;
-	short	y;
+	double	x;
+	double	y;
 }				t_2d;
 
 typedef struct	s_3d
@@ -34,6 +36,13 @@ typedef struct	s_3d
 	float	y;
 	float	z;
 }				t_3d;
+
+typedef struct	s_rgb
+{
+	float	r;
+	float	g;
+	float	b;
+}				t_rgb;
 
 typedef struct	s_vertex
 {
@@ -53,25 +62,30 @@ typedef struct	s_plot
 
 typedef struct	s_data
 {
-	void	*mlx;
-	void	*win;
-	void	*img;
-	char	*pixel_img;
-	float	xr;
-	float	yr;
-	float	zr;
-	double	scale;
-	double	xtrans;
-	double	ytrans;
-	int		bpp;
-	int		s_line;
-	int		ed;
-	int		max;
-	float	ca;
-	float	cb;
-	char	paused;
-	t_plot	*plot;
-	int		(*fract)(struct s_data *, double, double);
+	void		*mlx;
+	void		*win;
+	void		*img;
+	char		*pixel_img;
+	float		xr;
+	float		yr;
+	float		zr;
+	double		scale;
+	double		xtrans;
+	double		ytrans;
+	int			bpp;
+	int			s_line;
+	int			ed;
+	int			max;
+	float		ca;
+	float		cb;
+	t_rgb		**image;
+	char		paused;
+	t_plot		*plot;
+	pthread_t	*render_threads;
+	int			thread_count;
+	int			(*fract)(struct s_data *, double, double);
+	char		expired;
+	float		color_offset;
 }				t_data;
 
 void			ft_mat_copy(float source[4][4], float dest[4][4]);
@@ -87,4 +101,5 @@ void			ft_3d_drawline(t_data *d, t_3d p1, t_3d p2);
 t_3d			*ft_make_3d(int x, int y, int z);
 t_vertex		*ft_make_vertex(int x, int y, int z);
 void			color_pixel(t_data *d, int x, int y, int iterations);
+void			put_pixel(t_data *d, int x, int y, t_rgb color);
 #endif

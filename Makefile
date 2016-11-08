@@ -6,7 +6,7 @@
 #    By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/28 19:34:56 by mhurd             #+#    #+#              #
-#    Updated: 2016/10/30 16:55:24 by mhurd            ###   ########.fr        #
+#    Updated: 2016/11/08 09:39:43 by mhurd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC		= main.c \
 		  draw_fract.c \
 		  mandelbrot.c \
 		  burningship.c \
-		  trigfract.c
+		  trigfract.c \
+		  wall.c
 
 OBJ		= $(addprefix $(OBJDIR),$(SRC:.c=.o))
 

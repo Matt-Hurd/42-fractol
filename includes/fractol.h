@@ -6,7 +6,7 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 16:06:16 by mhurd             #+#    #+#             */
-/*   Updated: 2016/10/18 11:58:56 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/11/08 13:39:04 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,15 @@
 # define KEY_MOUSE_CLIC_R	0x02
 # define KEY_MOUSE_UP		0x05
 # define KEY_MOUSE_DOWN		0x04
+# define NUM_1				84
+# define NUM_2				83
 
-typedef struct	s_complex
+typedef struct	s_args
 {
-	double r;
-	double i;
-}				t_complex;
+	t_data	*d;
+	int		start;
+	int		end;
+}				t_args;
 
 t_plot			*parse_file(char *filename);
 void			draw_everything(t_data *d);
@@ -57,5 +60,10 @@ void			draw_fract(t_data *d);
 int				mouse_move(int x, int y, t_data *d);
 int				fract_mb(t_data *d, double x, double y);
 int				fract_bs(t_data *d, double x, double y);
-int				fract_trig(t_data *d, double x, double y);
+int				fract_quad(t_data *d, double x, double y);
+int				fract_wall(t_data *d, double x, double y);
+int				fract_cos(t_data *d, double x, double y);
+int				fract_sin(t_data *d, double x, double y);
+int				fract_phoenix(t_data *d, double x, double y);
+int				fract_bsjulia(t_data *d, double x, double y);
 #endif
