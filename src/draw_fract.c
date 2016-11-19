@@ -6,7 +6,7 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 05:54:00 by mhurd             #+#    #+#             */
-/*   Updated: 2016/11/08 10:46:24 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/11/09 18:18:57 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	*draw_chunk(void *args)
 		color_pixel(a->d, x, y, a->d->fract(a->d, x, y));
 		a->start++;
 	}
+	free(args);
 	return (NULL);
 }
 

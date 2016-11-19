@@ -6,7 +6,7 @@
 #    By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/28 19:34:56 by mhurd             #+#    #+#              #
-#    Updated: 2016/11/08 09:39:43 by mhurd            ###   ########.fr        #
+#    Updated: 2016/11/09 18:11:48 by mhurd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,10 @@ SRC		= main.c \
 		  burningship.c \
 		  trigfract.c \
 		  wall.c
+
+ifdef ALLOCWRAP
+	LDFLAGS += $(HOME)/lib/alloc_wrap.c -ldl
+endif
 
 OBJ		= $(addprefix $(OBJDIR),$(SRC:.c=.o))
 
@@ -76,7 +80,7 @@ $(LIBGFX):
 	make -C ./libgfx
 
 $(NAME): $(OBJ)
-	$(CC) -o $(NAME) $(OBJ) $(MLXLINK) $(LIBGFXLINK) $(LIBLINK)
+	$(CC) $(LDFLAGS) -o $(NAME) $(OBJ) $(MLXLINK) $(LIBGFXLINK) $(LIBLINK)
 
 clean:
 	rm -rf $(OBJDIR)

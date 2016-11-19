@@ -6,7 +6,7 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 01:12:45 by mhurd             #+#    #+#             */
-/*   Updated: 2016/11/08 13:38:19 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/11/09 18:21:49 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int				key_hook(int keycode, t_data *d)
 	if (keycode == KEY_ESC)
 	{
 		mlx_destroy_window(d->mlx, d->win);
+		free_all(d);
 		exit(0);
 	}
 	else if (keycode == KEY_SPACE)

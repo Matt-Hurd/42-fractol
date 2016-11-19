@@ -6,7 +6,7 @@
 /*   By: mhurd <mhurd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 16:06:16 by mhurd             #+#    #+#             */
-/*   Updated: 2016/11/08 13:39:04 by mhurd            ###   ########.fr       */
+/*   Updated: 2016/11/09 18:21:32 by mhurd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,5 @@ int				fract_cos(t_data *d, double x, double y);
 int				fract_sin(t_data *d, double x, double y);
 int				fract_phoenix(t_data *d, double x, double y);
 int				fract_bsjulia(t_data *d, double x, double y);
+void			free_all(t_data *d);
 #endif

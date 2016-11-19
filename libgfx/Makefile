@@ -2,7 +2,7 @@ NAME =	libgfx.a
 FLAGS =	-Wall -Wextra -Werror -O3
 CC = 	gcc
 ODIR =	bin/
-IDIR = 
+IDIR =
 SRC =
 OBJ =	$(SRC:.c=.o)
 EXT =	$(IDIR)$(NAME:.a=.h)
@@ -13,7 +13,7 @@ SRC	+=	ft_drawline.c \
 		matrix_math.c \
 		transform_matrix.c \
 		initializers.c \
-		color_spectrum.c 
+		color_spectrum.c
 
 O =		$(addprefix $(ODIR), $(OBJ))
 
@@ -46,7 +46,7 @@ clean:
 
 fclean: clean
 	@echo "-> Cleaning $(NAME)..."
-	@rm -f $(NAME) 
+	@rm -f $(NAME)
 
 re: fclean all
 
